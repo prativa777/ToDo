@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(204, 220, 211);
+}
+.container {
+border: 1px solid;
+overflow: visible;
+background-color: #234E70; 
+}
+.top{
+border: 1px solid black;
+background-color: #FBF8BE;
+/* display: flex; */
+}
+.bottom{
+border: 1px solid black;
+background-color: rgb(204, 220, 211);
+}
+.left{
+   /* border: 1px solid black;  */
+    width: 10%;
+}
+.right{
+    /* border: 1px solid black; */
+    width: 100%;
+    
+}
+.left,img{
+    /* border: 3px solid black; */
+    height: 100px;
+    width: 40%;
+
+}

@@ -1,0 +1,30 @@
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+
+<form  method="post" action="{% url 'update_todo' todo.id %}">
+
+    {% csrf_token %}
+
+    <div class="col-md-6">
+        <label class="form-label"><b>Title :</b></label>
+        <input type="text" class="form-control" name="title" value="{{ todo.title }}">
+    </div> <br>
+    <div class="col-md-6">
+        <label class="form-label"><b>Date :</b></label>
+        <input type="date" class="form-control" name="date" value="{{ todo.date }}">
+    </div> <br>
+    <div class="col-md-6">
+        <label class="form-label"><b>Detail:</b></label>
+        <input type="text" class="form-control" name="detail" value="{{ todo.detail }}">
+    </div> <br>
+    <div class="col-md-6">
+        <button type="submit" class="btn btn-dark">Update</button>
+        <a href="{% url 'todo_list' %}" class="btn btn-dark">Cancel</a>
+    </div>
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'todo_app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/todo_add.css' %}">
+
+<h3 style="font-family: 'Times New Roman', Times, serif;">Add TODO</h3> <br><br>
+
+<div class="container1">
+
+    <form  method="post" action="{% url 'add_todo' %}">
+
+        {% csrf_token %}
+
+        <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label"><b>Title :</b></label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="title">
+        </div> <br>
+        <div class="col-md-6">
+            <label for="formGroupExampleInput2" class="form-label"><b>Date :</b></label>
+            <input type="date" class="form-control" id="formGroupExampleInput2" name="date">
+        </div> <br>
+        <div class="col-md-6">
+            <label for="formGroupExampleInput2" class="form-label"><b>Detail:</b></label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" name="detail">
+        </div> <br>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-dark">Save</button>
+            <a href="{% url 'todo_list' %}" class="btn btn-dark">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+
+
+{% endblock %}

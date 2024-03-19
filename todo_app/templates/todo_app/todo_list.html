@@ -1,0 +1,30 @@
+{% extends 'todo_app/base.html' %}
+{% load static %}
+
+{% block content %} <br><br>
+<!-- <style>
+    div{
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+    }
+</style> -->
+
+<!-- <h3 style="font-family:cursive; text-align: center;"><b>My TODOs</b></h3> -->
+<a href="{% url 'add_todo' %}" class="btn btn-dark" style="margin-left: 5%;"><h4 style="font-family: 'Times New Roman', Times, serif;"><b>Add new todo + </b></h4></a> <br><br>
+
+{% for todo in todos %}
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><b>{{ todo.title }}</b></h4> 
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{ todo.date }}</h6> <hr>
+      <h5 class="card-text">{{ todo.detail }}</h5>
+      <a href="{% url 'update_todo' todo.id %}" class="btn btn-dark">Update</a>
+      <a href="{% url 'delete_todo' todo.id %}" class="btn btn-dark">Delete</a>
+    </div> 
+  </div> <br>
+  {% endfor %}
+
+{% endblock %}
